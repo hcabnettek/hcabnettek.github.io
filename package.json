@@ -1,0 +1,29 @@
+{
+  "name": "hcabnettek.github.io",
+  "version": "0.1.0",
+  "description": "demo sight github pages",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hcabnettek/hcabnettek.github.io"
+  },
+  "keywords": [
+    "github",
+    "gulp",
+    "npm",
+    "node"
+  ],
+  "author": "Chris Kettenbach",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hcabnettek/hcabnettek.github.io/issues"
+  },
+  "homepage": "https://github.com/hcabnettek/hcabnettek.github.io",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-minify-css": "^0.4.6"
+  }
+}
