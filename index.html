@@ -1,18 +1,300 @@
-<html>
+<!DOCTYPE html>
+<!--[if IE 8 ]><html lang="en" class="no-js lt-ie9" xmlns:ng="http://angularjs.org" id="ng-app" ng-controller="AppCtrl"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js styleguide" lang="en" ng-controller="AppCtrl"> <!--<![endif]-->
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="http://www.sdge.com/sites/all/themes/sdge_zen/images/sdge_fav.jpg" type="image/jpeg">
+		<meta name="description" content="plStyleGuide">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Chris Kettenbach's Github</title>
-    <link rel="stylesheet" href="assets/style.min.css">
+    <link rel="stylesheet" href="assets/maaui.css">
   </head>
-  <body ng-app="hcab">
-    <div ng-controller="hellowWorldCtrl">
-      <h1>Hello {{ name }}</h1>
-      <input ng-model="name" />
-    </div>
+  <body>
+    <div class="skipLinks" ng-controller="skipLinksCtrl">
+			<ul class="unstyled">
+				<li>
+					<a href="#critical-error" id="skipCritical">Skip to technology error</a>
+				</li>
+				<li>
+					<a href="#page-errors" id="skipErrors" eat-click ng-click="skip($event);"
+						ui-event="{blur: 'blur($event)', focus: 'focus($event)'}">Skip to page errors</a>
+				</li>
+				<li>
+					<a href="#main-body" id="skipNav" eat-click ng-click="skip($event);"
+						ui-event="{blur: 'blur($event)', focus: 'focus($event)'}">Skip to main content</a>
+				</li>
+			</ul>
+		</div>
 
-    <script src="bower/angular/angular.min.js"></script>
-    <script src="assets/script.min.js"></script>
-    <script src="js/controllers.js"></script>
-  </body>
+		<div class="noscript" id="critical-error">
+			<div>
+				<h1>JavaScript must be enabled to run My Account</h1>
+			</div>
+		</div>
+		<div id="sticky-wrapper">
+      <header role="banner">
+      	<div id="top" class="topHeader">
+      		<div class="container top-header" >
+      			<a href="#top" class="brand">
+      				<!--img src="/images/Logo.png" alt="PL Logo" /-->
+      			</a>
+      		</div>
+      	</div>
+        <nav role="navigation">
+        	<div class="navbar">
+        		<div class="navbar-inner">
+        			<div class="container">
+        				<div class="nav-collapse collapse">
+        					<ul class="nav">
+
+        						<li ng-class="{active: $state.includes('introduction')}" class="dropdown" hover-menu="">
+        							<a eat-click="">Introduction</a>
+        							<ul class="dropdown-menu">
+        								<li ng-class="{active: $state.includes('introduction.howtogetstarted')}">
+        									<a ui-sref="introduction.howtogetstarted">How To Get Started</a>
+        								</li>
+
+        								<li ng-class="{active: $state.includes('introduction.aboutthisdocument')}">
+        									<a ui-sref="introduction.aboutthisdocument">About This Document</a>
+        								</li>
+
+        							</ul>
+        						</li>
+        						<li ng-class="{active: $state.includes('aboutmyaccount')}" class="dropdown" hover-menu="">
+        							<a eat-click="">About My Account</a>
+        							<ul class="dropdown-menu">
+
+        								<li ng-class="{active: $state.includes('aboutmyaccount.myaccountoverview')}">
+        									<a ui-sref="aboutmyaccount.myaccountoverview">My Account Overview</a>
+        								</li>
+
+        								<li ng-class="{active: $state.includes('aboutmyaccount.thesdgebrand')}">
+        									<a ui-sref="aboutmyaccount.thesdgebrand">The &ldquo;SDG&amp;E Connected&rdquo; Brand</a>
+        								</li>
+        								<li ng-class="{active: $state.includes('aboutmyaccount.sdgecustomerprofiles')}">
+        									<a ui-sref="aboutmyaccount.sdgecustomerprofiles">My Account Customers</a>
+        								</li>
+
+        								<li ng-class="{active: $state.includes('aboutmyaccount.responsivedesign')}">
+        									<a ui-sref="aboutmyaccount.responsivedesign">Responsive Design</a>
+        								</li>
+        								<li ng-class="{active: $state.includes('aboutmyaccount.accessibility')}">
+        									<a ui-sref="aboutmyaccount.accessibility">Web Accessibility</a>
+        								</li>
+
+        							</ul>
+        						</li>
+
+        						<li ng-class="{active: $state.includes('foundation')}" class="dropdown" hover-menu="">
+        							<a eat-click>Foundation</a>
+        							<ul class="dropdown-menu">
+        								<li ng-class="{active: $state.includes('foundation.layoutgrid')}">
+        									<a ui-sref="foundation.layoutgrid">Layout Grid</a>
+        								</li>
+        								<li ng-class="{active: $state.includes('foundation.pagetemplates')}">
+        									<a ui-sref="foundation.pagetemplates">Page Templates</a>
+        								</li>
+        								<li ng-class="{active: $state.includes('foundation.headerfooterglobalnav')}">
+        									<a ui-sref="foundation.headerfooterglobalnav">Header, Footer, Global Navigation</a>
+        								</li>
+        								<li ng-class="{active: $state.includes('foundation.rightrail')}">
+        									<a ui-sref="foundation.rightrail">Right Rail</a>
+        								</li>
+
+
+        							</ul>
+        						</li>
+
+        						<li ng-class="{active: $state.includes('designelements')}" class="dropdown" hover-menu="">
+        							<a eat-click="">Design Elements</a>
+        							<ul class="dropdown-menu">
+        								<li ng-class="{active: $state.includes('designelements.logos')}">
+        									<a ui-sref="designelements.logos">Logos</a>
+        								</li>
+        								<li ng-class="{active: $state.includes('designelements.colorusage')}">
+        									<a ui-sref="designelements.colorusage">Color Usage</a>
+        								</li>
+        								<li ng-class="{active: $state.includes('designelements.typography')}">
+        									<a ui-sref="designelements.typography">Typography</a>
+        								</li>
+        								<li ng-class="{active: $state.includes('designelements.iconography')}">
+        									<a ui-sref="designelements.iconography">Iconography</a>
+        								</li>
+        								<li ng-class="{active: $state.includes('designelements.photography')}">
+        									<a ui-sref="designelements.photography">Photography</a>
+        								</li>
+
+        							</ul>
+        						</li>
+
+        						<li ng-class="{active: $state.includes('buildingblocks')}" class="dropdown" hover-menu="">
+        							<a eat-click="">Building Blocks</a>
+        							<ul class="dropdown-menu">
+        								<li ng-class="{active: $state.includes('buildingblocks.navs')}">
+        									<a ui-sref="buildingblocks.navs">Navigation Elements</a>
+        								</li>
+        								<li ng-class="{active: $state.includes('buildingblocks.tablesandlists')}">
+        									<a ui-sref="buildingblocks.tablesandlists">Tables</a>
+        								</li>
+        								<li ng-class="{active: $state.includes('buildingblocks.formelements')}">
+        									<a ui-sref="buildingblocks.formelements">Forms Elements</a>
+        								</li>
+        								<li ng-class="{active: $state.includes('buildingblocks.buttons')}">
+        									<a ui-sref="buildingblocks.buttons">Buttons</a>
+        								</li>
+        								<li ng-class="{active: $state.includes('buildingblocks.links')}">
+        									<a ui-sref="buildingblocks.links">Links</a>
+        								</li>
+        								<li ng-class="{active: $state.includes('buildingblocks.statusindicators')}">
+        									<a ui-sref="buildingblocks.statusindicators">Status Indicators</a>
+        								</li>
+        								<li ng-class="{active: $state.includes('buildingblocks.calendarandscheduler')}">
+        									<a ui-sref="buildingblocks.calendarandscheduler">Calendar and Scheduler</a>
+        								</li>
+        								<li ng-class="{active: $state.includes('buildingblocks.alertsandmessages')}">
+        									<a ui-sref="buildingblocks.alertsandmessages">Alerts and Messages</a>
+        								</li>
+        								<li ng-class="{active: $state.includes('buildingblocks.tooltips')}">
+        									<a ui-sref="buildingblocks.tooltips">Tooltips</a>
+        								</li>
+        								<li ng-class="{active: $state.includes('buildingblocks.printerfriendly')}">
+        									<a ui-sref="buildingblocks.printerfriendly">Printer-friendly Pages</a>
+        								</li>
+        								<li ng-class="{active: $state.includes('buildingblocks.rightrail')}">
+        									<a ui-sref="buildingblocks.rightrail">Right Rail</a>
+        								</li>
+        								<li ng-class="{active: $state.includes('buildingblocks.charts')}">
+        									<a ui-sref="buildingblocks.charts">Charts</a>
+        								</li>
+        								<li ng-class="{active: $state.includes('buildingblocks.collapsingcontrols')}">
+        									<a ui-sref="buildingblocks.collapsingcontrols">Collapsing Controls</a>
+        								</li>
+
+        							</ul>
+        						</li>
+
+        						<li ng-class="{active: $state.includes('contentguidelines')}" class="dropdown" hover-menu="">
+        							<a eat-click="">Content Guidelines</a>
+        							<ul class="dropdown-menu">
+        								<li ng-class="{active: $state.includes('contentguidelines.voiceandmood')}">
+        									<a ui-sref="contentguidelines.voiceandmood">Voice and Mood</a>
+        								</li>
+        								<li ng-class="{active: $state.includes('contentguidelines.copyandlanguage')}">
+        									<a ui-sref="contentguidelines.copyandlanguage">Copy and Language</a>
+        								</li>
+        								<li ng-class="{active: $state.includes('contentguidelines.glossary')}">
+        									<a ui-sref="contentguidelines.glossary">Glossary</a>
+        								</li>
+        								<li ng-class="{active: $state.includes('contentguidelines.docindex')}">
+        									<a ui-sref="contentguidelines.docindex">Index</a>
+        								</li>
+        							</ul>
+        						</li>
+
+
+        					</ul>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        </nav>
+
+      </header>
+			<div id="body-wrapper">
+				<div id="wrapper-overlay">
+					<div id="wrapper-outer">
+						<div id="wrapper">
+							<div class="container" id="main-body" role="main" ui-view>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+    <footer role="contentinfo">
+    	<div id="footer-wrapper">
+    		<div id="footer-wrapper-overlay">
+    			<div id="footer-wrapper-overlay-inner">
+    				<div id="footer-bar-wrapper">
+    					<div id="footer-bar">
+    						<div class="row-fluid">
+    							<div class="span2">
+    								<img src="assets/images/norton_stub.png" alt="Norton Secured" />
+    							</div>
+    							<div class="span8 footer-container">
+    								<ul>
+    									<li>
+    										<a href="#">Terms & Conditions</a>
+    									</li>
+    									<li>
+    										<a href="#">Privacy Policy</a>
+    									</li>
+    									<li>
+    										<a href="#">Privacy Notice</a>
+    									</li>
+    									<li>
+    										<a href="#">Contact Us</a>
+    									</li>
+    									<li>
+    										<a href="#">About Accessibility</a>
+    									</li>
+    								</ul>
+    							</div>
+    							<div class="span2 footer-container">
+    								<ul id="footer-social-media-list">
+    									<li>
+    										<a href="#">
+    											<img alt="Facebook" src="assets/images/SocialIcons_Facebook.png" />
+    										</a>
+    									</li>
+    									<li>
+    										<a href="#">
+    											<img alt="Twitter" src="assets/images/SocialIcons_Twitter.png" />
+    										</a>
+    									</li>
+    									<li>
+    										<a href="#">
+    											<img alt="YouTube" src="assets/images/SocialIcons_YouTube.png" />
+    										</a>
+    									</li>
+    									<li>
+    										<a href="#">
+    											<img alt="Pinterest" src="assets/images/SocialIcons_Pinterest.png" />
+    										</a>
+    									</li>
+    								</ul>
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+    				<div class="clearfix region region-footer">
+    					<div class="clearfix region-content-footer"></div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    	<div id="bottom-wrapper">
+    		<div id="bottom-wrapper-overlay">
+    			<div class="clearfix region region-bottom">
+    				<div class="clearfix region-content-bottom">
+    					<div id="block-block-24" class="clearfix block block-block first odd">
+    						<div class="content">
+    							<p class="legal-trademark">The Trademarks used herein are the property of their respective owners. All rights reserved.</p>
+    						</div>
+    					</div>
+    					<div id="block-block-29" class="clearfix block block-block last even">
+    						<div class="content">
+    							<!--img src="Logo_Footer.png" alt="Logo" / -->
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </footer>
+    <script src='src/bower/requirejs/require.js' data-main='src/requirejs/config'></script>
+	</body>
 </html>

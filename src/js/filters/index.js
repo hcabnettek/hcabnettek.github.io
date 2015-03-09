@@ -1,0 +1,5 @@
+define([
+	'./characters'
+        ], function(){
+			
+});
